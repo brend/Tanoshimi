@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TanoshimiWidget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>410B3CCA1ED9923B001F1A11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>410B3CE01ED9925D001F1A11</key>
 		<dict>
 			<key>primary</key>
 			<true/>

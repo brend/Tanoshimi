@@ -11,7 +11,38 @@
 		410B3CD11ED9923B001F1A11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410B3CD01ED9923B001F1A11 /* ViewController.swift */; };
 		410B3CD31ED9923B001F1A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CD21ED9923B001F1A11 /* Assets.xcassets */; };
 		410B3CD61ED9923B001F1A11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CD41ED9923B001F1A11 /* Main.storyboard */; };
+		410B3CE41ED9925D001F1A11 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410B3CE31ED9925D001F1A11 /* NotificationCenter.framework */; };
+		410B3CE91ED9925D001F1A11 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410B3CE81ED9925D001F1A11 /* TodayViewController.swift */; };
+		410B3CEC1ED9925D001F1A11 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CEA1ED9925D001F1A11 /* TodayViewController.xib */; };
+		410B3CF01ED9925D001F1A11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CEE1ED9925D001F1A11 /* InfoPlist.strings */; };
+		410B3CF31ED9925D001F1A11 /* TanoshimiWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 410B3CE11ED9925D001F1A11 /* TanoshimiWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		410B3CF91ED994A9001F1A11 /* Resources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CF81ED994A9001F1A11 /* Resources.plist */; };
+		410B3D031ED9EC48001F1A11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 410B3D051ED9EC48001F1A11 /* Localizable.strings */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		410B3CF11ED9925D001F1A11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 410B3CC31ED9923B001F1A11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 410B3CE01ED9925D001F1A11;
+			remoteInfo = TanoshimiWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		410B3CF71ED9925D001F1A11 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				410B3CF31ED9925D001F1A11 /* TanoshimiWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		410B3CCB1ED9923B001F1A11 /* Tanoshimi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tanoshimi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +51,18 @@
 		410B3CD21ED9923B001F1A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		410B3CD51ED9923B001F1A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		410B3CD71ED9923B001F1A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		410B3CE11ED9925D001F1A11 /* TanoshimiWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TanoshimiWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		410B3CE31ED9925D001F1A11 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		410B3CE71ED9925D001F1A11 /* TanoshimiWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TanoshimiWidget.entitlements; sourceTree = "<group>"; };
+		410B3CE81ED9925D001F1A11 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		410B3CEB1ED9925D001F1A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
+		410B3CED1ED9925D001F1A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		410B3CEF1ED9925D001F1A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		410B3CF81ED994A9001F1A11 /* Resources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resources.plist; sourceTree = "<group>"; };
+		410B3D041ED9EC48001F1A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		410B3D061ED9ED38001F1A11 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		410B3D071ED9ED3A001F1A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		410B3D081ED9EDD4001F1A11 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +73,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		410B3CDE1ED9925D001F1A11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				410B3CE41ED9925D001F1A11 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				410B3CCD1ED9923B001F1A11 /* Tanoshimi */,
+				410B3CE51ED9925D001F1A11 /* TanoshimiWidget */,
+				410B3CE21ED9925D001F1A11 /* Frameworks */,
 				410B3CCC1ED9923B001F1A11 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				410B3CCB1ED9923B001F1A11 /* Tanoshimi.app */,
+				410B3CE11ED9925D001F1A11 /* TanoshimiWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +115,36 @@
 			path = Tanoshimi;
 			sourceTree = "<group>";
 		};
+		410B3CE21ED9925D001F1A11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				410B3CE31ED9925D001F1A11 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		410B3CE51ED9925D001F1A11 /* TanoshimiWidget */ = {
+			isa = PBXGroup;
+			children = (
+				410B3CE81ED9925D001F1A11 /* TodayViewController.swift */,
+				410B3CEA1ED9925D001F1A11 /* TodayViewController.xib */,
+				410B3CED1ED9925D001F1A11 /* Info.plist */,
+				410B3CEE1ED9925D001F1A11 /* InfoPlist.strings */,
+				410B3CF81ED994A9001F1A11 /* Resources.plist */,
+				410B3CE61ED9925D001F1A11 /* Supporting Files */,
+				410B3D051ED9EC48001F1A11 /* Localizable.strings */,
+			);
+			path = TanoshimiWidget;
+			sourceTree = "<group>";
+		};
+		410B3CE61ED9925D001F1A11 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				410B3CE71ED9925D001F1A11 /* TanoshimiWidget.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,15 +155,34 @@
 				410B3CC71ED9923B001F1A11 /* Sources */,
 				410B3CC81ED9923B001F1A11 /* Frameworks */,
 				410B3CC91ED9923B001F1A11 /* Resources */,
+				410B3CF71ED9925D001F1A11 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				410B3CF21ED9925D001F1A11 /* PBXTargetDependency */,
 			);
 			name = Tanoshimi;
 			productName = Tanoshimi;
 			productReference = 410B3CCB1ED9923B001F1A11 /* Tanoshimi.app */;
 			productType = "com.apple.product-type.application";
+		};
+		410B3CE01ED9925D001F1A11 /* TanoshimiWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 410B3CF41ED9925D001F1A11 /* Build configuration list for PBXNativeTarget "TanoshimiWidget" */;
+			buildPhases = (
+				410B3CDD1ED9925D001F1A11 /* Sources */,
+				410B3CDE1ED9925D001F1A11 /* Frameworks */,
+				410B3CDF1ED9925D001F1A11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TanoshimiWidget;
+			productName = TanoshimiWidget;
+			productReference = 410B3CE11ED9925D001F1A11 /* TanoshimiWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +198,10 @@
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
+					410B3CE01ED9925D001F1A11 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 410B3CC61ED9923B001F1A11 /* Build configuration list for PBXProject "Tanoshimi" */;
@@ -104,6 +211,8 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				"pt-BR",
 			);
 			mainGroup = 410B3CC21ED9923B001F1A11;
 			productRefGroup = 410B3CCC1ED9923B001F1A11 /* Products */;
@@ -111,6 +220,7 @@
 			projectRoot = "";
 			targets = (
 				410B3CCA1ED9923B001F1A11 /* Tanoshimi */,
+				410B3CE01ED9925D001F1A11 /* TanoshimiWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -122,6 +232,17 @@
 			files = (
 				410B3CD31ED9923B001F1A11 /* Assets.xcassets in Resources */,
 				410B3CD61ED9923B001F1A11 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		410B3CDF1ED9925D001F1A11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				410B3CF91ED994A9001F1A11 /* Resources.plist in Resources */,
+				410B3D031ED9EC48001F1A11 /* Localizable.strings in Resources */,
+				410B3CEC1ED9925D001F1A11 /* TodayViewController.xib in Resources */,
+				410B3CF01ED9925D001F1A11 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +258,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		410B3CDD1ED9925D001F1A11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				410B3CE91ED9925D001F1A11 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		410B3CF21ED9925D001F1A11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 410B3CE01ED9925D001F1A11 /* TanoshimiWidget */;
+			targetProxy = 410B3CF11ED9925D001F1A11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		410B3CD41ED9923B001F1A11 /* Main.storyboard */ = {
@@ -148,6 +285,33 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		410B3CEA1ED9925D001F1A11 /* TodayViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				410B3CEB1ED9925D001F1A11 /* Base */,
+			);
+			name = TodayViewController.xib;
+			sourceTree = "<group>";
+		};
+		410B3CEE1ED9925D001F1A11 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				410B3CEF1ED9925D001F1A11 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		410B3D051ED9EC48001F1A11 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				410B3D041ED9EC48001F1A11 /* Base */,
+				410B3D061ED9ED38001F1A11 /* de */,
+				410B3D071ED9ED3A001F1A11 /* en */,
+				410B3D081ED9EDD4001F1A11 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -155,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -205,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -246,6 +412,7 @@
 		410B3CDB1ED9923B001F1A11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tanoshimi/Info.plist;
@@ -259,12 +426,41 @@
 		410B3CDC1ED9923B001F1A11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tanoshimi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = entenwolf.Tanoshimi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		410B3CF51ED9925D001F1A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TanoshimiWidget/TanoshimiWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TanoshimiWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = entenwolf.Tanoshimi.TanoshimiWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		410B3CF61ED9925D001F1A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TanoshimiWidget/TanoshimiWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TanoshimiWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = entenwolf.Tanoshimi.TanoshimiWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -286,6 +482,14 @@
 			buildConfigurations = (
 				410B3CDB1ED9923B001F1A11 /* Debug */,
 				410B3CDC1ED9923B001F1A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		410B3CF41ED9925D001F1A11 /* Build configuration list for PBXNativeTarget "TanoshimiWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				410B3CF51ED9925D001F1A11 /* Debug */,
+				410B3CF61ED9925D001F1A11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
