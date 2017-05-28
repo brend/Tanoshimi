@@ -6,6 +6,6 @@
   Copyright © 2017 Entenwolf Software. All rights reserved.
 */
 
-"TanoshimiDaysLeft" = "mais %d dias";
-"TanoshimiDate" = "até %@";
-"TanoshimiArrived" = "The day has come!";
+"TanoshimiDaysLeft" = "Faltam %d dias";
+"TanoshimiDate" = "para %@";
+"TanoshimiArrived" = "Finalmente chegou o dia!";
