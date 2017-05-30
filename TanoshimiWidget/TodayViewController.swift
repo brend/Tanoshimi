@@ -17,45 +17,90 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     override var nibName: String? {
         return "TodayViewController"
     }
+    
+    override func awakeFromNib() {
+        // observe date change to update ui
+        self.addObserver(self, forKeyPath: "tanoshimiDate", options: .new, context: &myContext)
+        
+        
+        // TEST
+        let fm = FileManager.default
+        
+        do {
+            let path = try fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        
+            print(path)
+        } catch {
+            
+        }
+    }
+    
+    private var myContext = 0
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        // update ui in case of date change
+        if context == &myContext {
+            updateUserInterface()
+        } else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
+    
+    var widgetAllowsEditing: Bool = true
+    
+    dynamic var tanoshimiDate: Date?
 
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Update your data and prepare for a snapshot. Call completion handler when you are done
-        // with NoData if nothing has changed or NewData if there is new data since the last
-        // time we called you
-        //completionHandler(.noData)
+        updateUserInterface()
+        completionHandler(.newData)
+    }
+    
+    func updateUserInterface() {
+        if self.tanoshimiDate == nil {
+            self.tanoshimiDate = loadTanoshimiDateFromResources()
+        }
         
-        let tanoshimiDateText: String
-        let daysLeftText: String
-        
-        if let tanoshimiDate = getTanoshimiDate() {
+        self.tanoshimiDateField.stringValue = self.getTanoshimiDateText()
+        self.daysLeftField.stringValue = self.getDaysLeftText()
+    }
+    
+    func getTanoshimiDateText() -> String {
+        if let tanoshimiDate = self.tanoshimiDate {
             let timeLeft = tanoshimiDate.timeIntervalSince(Date())
             let daysLeft = Int(ceil(timeLeft / (24 * 3600)))
             
             if daysLeft <= 0 {
-                daysLeftText = NSLocalizedString("TanoshimiArrived", comment: "Oshiri")
-                tanoshimiDateText = ""
+                return ""
             } else {
                 let formattedDate = formatDate(date: tanoshimiDate)
                 
-                // daysLeftText = "\(daysLeft) days left"
-                let daysLeftFormat = NSLocalizedString("TanoshimiDaysLeft", comment: "Butt")
                 let untilFormat = NSLocalizedString("TanoshimiDate", comment: "Popo")
                 
-                daysLeftText = String(format: daysLeftFormat, daysLeft)
-                tanoshimiDateText = String(format: untilFormat, formattedDate)
+                return String(format: untilFormat, formattedDate)
             }
         } else {
-            tanoshimiDateText = "n/a"
-            daysLeftText = "n/a"
+            return "n/a"
         }
-        
-        tanoshimiDateField.stringValue = tanoshimiDateText
-        daysLeftField.stringValue = daysLeftText
-        
-        completionHandler(.newData)
+    }
+    
+    func getDaysLeftText() -> String {
+        if let tanoshimiDate = self.tanoshimiDate {
+            let timeLeft = tanoshimiDate.timeIntervalSince(Date())
+            let daysLeft = Int(ceil(timeLeft / (24 * 3600)))
+            
+            if daysLeft <= 0 {
+                return NSLocalizedString("TanoshimiArrived", comment: "Oshiri")
+            } else {
+                let daysLeftFormat = NSLocalizedString("TanoshimiDaysLeft", comment: "Butt")
+                
+                return String(format: daysLeftFormat, daysLeft)
+            }
+        } else {
+            return "n/a"
+        }
     }
 
-    func getTanoshimiDate() -> Date? {
+    func loadTanoshimiDateFromResources() -> Date? {
         var dict: NSDictionary? = nil
         
         if let path = Bundle.main.path(forResource: "Resources", ofType: "plist") {
@@ -77,4 +122,53 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         
         return formatter.string(from: date)
     }
+    
+    dynamic var isEditing = false
+    
+    func widgetDidBeginEditing() {
+        self.isEditing = true
+    }
+    
+    func widgetDidEndEditing() {
+        // TODO: Cancel editing?
+        self.isEditing = false
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

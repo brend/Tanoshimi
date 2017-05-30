@@ -37,6 +37,51 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="self.isEditing" id="ojN-KL-pmw"/>
+                    </connections>
+                </textField>
+                <datePicker hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOR-L1-e6Z">
+                    <rect key="frame" x="0.0" y="13" width="96" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="5W9-Gi-2uc">
+                        <font key="font" metaFont="system"/>
+                        <date key="date" timeIntervalSinceReferenceDate="504921600">
+                            <!--2017-01-01 00:00:00 +0000-->
+                        </date>
+                        <date key="minDate" timeIntervalSinceReferenceDate="504921600">
+                            <!--2017-01-01 00:00:00 +0000-->
+                        </date>
+                        <date key="maxDate" timeIntervalSinceReferenceDate="31525369199">
+                            <!--2999-12-31 22:59:59 +0000-->
+                        </date>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                    </datePickerCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="self.isEditing" id="X8v-YE-LgJ">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="value" keyPath="self.tanoshimiDate" id="GLd-eO-aDI"/>
+                    </connections>
+                </datePicker>
+                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVe-nq-KRU">
+                    <rect key="frame" x="99" y="16" width="143" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="change the date!" id="q79-No-fX1">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="0.36862745098039218" green="0.76862745098039209" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="self.isEditing" id="viW-cf-NkG">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>
@@ -45,7 +90,8 @@
                 <constraint firstItem="KU6-MB-4x2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="11" id="aFo-8G-i2m"/>
                 <constraint firstAttribute="bottom" secondItem="KU6-MB-4x2" secondAttribute="bottom" constant="41" id="pP1-Fv-KED"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="171"/>
+            <point key="canvasLocation" x="-772" y="-152"/>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="H7E-PZ-eT7"/>
     </objects>
 </document>
