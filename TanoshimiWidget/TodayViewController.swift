@@ -21,18 +21,6 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     override func awakeFromNib() {
         // observe date change to update ui
         self.addObserver(self, forKeyPath: "tanoshimiDate", options: .new, context: &myContext)
-        
-        
-        // TEST
-        let fm = FileManager.default
-        
-        do {
-            let path = try fm.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        
-            print(path)
-        } catch {
-            
-        }
     }
     
     private var myContext = 0

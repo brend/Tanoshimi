@@ -450,6 +450,7 @@
 		410B3CF51ED9925D001F1A11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_ENTITLEMENTS = TanoshimiWidget/TanoshimiWidget.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TanoshimiWidget/Info.plist;
@@ -464,6 +465,7 @@
 		410B3CF61ED9925D001F1A11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_ENTITLEMENTS = TanoshimiWidget/TanoshimiWidget.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TanoshimiWidget/Info.plist;
