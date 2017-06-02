@@ -11,8 +11,8 @@ import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
     
-    @IBOutlet var tanoshimiDateField: NSTextField!
-    @IBOutlet var daysLeftField: NSTextField!
+    @IBOutlet weak var tanoshimiDateField: NSTextField!
+    @IBOutlet weak var daysLeftField: NSTextField!
 
     override var nibName: String? {
         return "TodayViewController"
@@ -20,7 +20,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     
     override func awakeFromNib() {
         // observe date change to update ui
-        self.addObserver(self, forKeyPath: "tanoshimiDate", options: .new, context: &myContext)
+        //self.addObserver(self, forKeyPath: "tanoshimiDate", options: .new, context: &myContext)
     }
     
     private var myContext = 0

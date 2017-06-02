@@ -67,8 +67,12 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "0"
+         BundleIdentifier = "com.apple.notificationcenter.widgetsimulator"
+         RemotePath = "/System/Library/Frameworks/NotificationCenter.framework/Versions/A/Resources/Widget Simulator.app">
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "410B3CCA1ED9923B001F1A11"
@@ -76,7 +80,7 @@
             BlueprintName = "Tanoshimi"
             ReferencedContainer = "container:Tanoshimi.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
