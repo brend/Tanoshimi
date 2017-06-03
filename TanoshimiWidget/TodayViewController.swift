@@ -16,6 +16,12 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     @IBOutlet weak var emojiField: NSTextField!
     
     let presets = Presets()
+    
+    let widgetAllowsEditing = true
+    
+    dynamic var tanoshimiDate: Date?
+    
+    dynamic var tanoshimiEmoji: String?
 
     override var nibName: String? {
         return "TodayViewController"
@@ -23,7 +29,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     
     override func awakeFromNib() {
         // observe date change to update ui
-        //self.addObserver(self, forKeyPath: "tanoshimiDate", options: .new, context: &myContext)
+        self.addObserver(self, forKeyPath: "tanoshimiDate", options: .new, context: &myContext)
     }
     
     private var myContext = 0
@@ -37,12 +43,6 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         }
     }
     
-    var widgetAllowsEditing: Bool = true
-    
-    dynamic var tanoshimiDate: Date?
-    
-    dynamic var tanoshimiEmoji: String?
-
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         updateUserInterface()
         completionHandler(.newData)
@@ -114,8 +114,12 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     }
     
     func widgetDidEndEditing() {
-        // TODO: Cancel editing?
         self.isEditing = false
+    }
+    
+    override func viewDidDisappear() {
+        // remove observer before deallocation
+        self.removeObserver(self, forKeyPath: "tanoshimiDate")
     }
 }
 
