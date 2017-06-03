@@ -13,6 +13,9 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     
     @IBOutlet weak var tanoshimiDateField: NSTextField!
     @IBOutlet weak var daysLeftField: NSTextField!
+    @IBOutlet weak var emojiField: NSTextField!
+    
+    let presets = Presets()
 
     override var nibName: String? {
         return "TodayViewController"
@@ -37,6 +40,8 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     var widgetAllowsEditing: Bool = true
     
     dynamic var tanoshimiDate: Date?
+    
+    dynamic var tanoshimiEmoji: String?
 
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         updateUserInterface()
@@ -45,11 +50,16 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     
     func updateUserInterface() {
         if self.tanoshimiDate == nil {
-            self.tanoshimiDate = loadTanoshimiDateFromResources()
+            self.tanoshimiDate = presets.date
+        }
+        
+        if self.tanoshimiEmoji == nil {
+            self.tanoshimiEmoji = presets.emoji
         }
         
         self.tanoshimiDateField.stringValue = self.getTanoshimiDateText()
         self.daysLeftField.stringValue = self.getDaysLeftText()
+        self.emojiField.stringValue = self.tanoshimiEmoji!
     }
     
     func getTanoshimiDateText() -> String {
@@ -86,20 +96,6 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         } else {
             return "n/a"
         }
-    }
-
-    func loadTanoshimiDateFromResources() -> Date? {
-        var dict: NSDictionary? = nil
-        
-        if let path = Bundle.main.path(forResource: "Resources", ofType: "plist") {
-            dict = NSDictionary(contentsOfFile: path)
-        }
-        
-        if let resources = dict {
-            return resources.value(forKey: "TanoshimiDate") as? Date
-        }
-        
-        return nil
     }
     
     func formatDate(date: Date) -> String {

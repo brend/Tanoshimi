@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModule="TanoshimiWidget" customModuleProvider="target">
             <connections>
                 <outlet property="daysLeftField" destination="KU6-MB-4x2" id="Na4-uS-Nfc"/>
+                <outlet property="emojiField" destination="lZv-bp-7Sm" id="j0g-nN-Bs5"/>
                 <outlet property="tanoshimiDateField" destination="ZiE-9A-R3l" id="Pnh-hW-Pzl"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>

@@ -4,5 +4,7 @@
 <dict>
 	<key>TanoshimiDate</key>
 	<date>2017-07-07T12:30:00Z</date>
+	<key>TanoshimiEmoji</key>
+	<string>👻</string>
 </dict>
 </plist>
