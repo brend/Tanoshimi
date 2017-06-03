@@ -9,23 +9,33 @@
 import Foundation
 
 class Presets {
-    let date: Date
-    let emoji: String
+    var date: Date
+    var emoji: String
     
     init() {
-        var dict: NSDictionary? = nil
-        
-        if let path = Bundle.main.path(forResource: "Resources", ofType: "plist") {
-            dict = NSDictionary(contentsOfFile: path)
+        // register defaults
+        let defaults = UserDefaults.standard
+        let defaultPrefsFile = Bundle.main.url(forResource: "Resources", withExtension: "plist")
+        if let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile!) {
+            let prefsdict = defaultPrefs as! [String : Any]
+            
+            defaults.register(defaults: prefsdict)
         }
         
-        if let resources = dict {
-            date = (resources.value(forKey: "TanoshimiDate") as? Date) ?? Date()
-            emoji = (resources.value(forKey: "TanoshimiEmoji") as? String) ?? "😃"
-        } else {
-            date = Date.init()
-            emoji = "😃"
-        }
+        // apply defaults
+        self.date = defaults.object(forKey: "date") as! Date
+        self.emoji = defaults.string(forKey: "emoji")!
+    }
+    
+    func registerDefaults() {
+        
+    }
+    
+    func save() {
+        let defaults = UserDefaults.standard
+
+        defaults.setValue(date, forKey: "date")
+        defaults.setValue(emoji, forKey: "emoji")
     }
 }
 

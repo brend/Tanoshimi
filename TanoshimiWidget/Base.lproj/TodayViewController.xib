@@ -94,6 +94,11 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="editable" keyPath="self.isEditing" id="fMe-pU-SKV"/>
+                        <binding destination="-2" name="value" keyPath="self.tanoshimiEmoji" id="cJA-4q-OdE">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </textField>
             </subviews>

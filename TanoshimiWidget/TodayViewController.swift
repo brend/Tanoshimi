@@ -115,6 +115,10 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     
     func widgetDidEndEditing() {
         self.isEditing = false
+        
+        self.presets.date = self.tanoshimiDate!
+        self.presets.emoji = self.tanoshimiEmoji!
+        self.presets.save()
     }
     
     override func viewDidDisappear() {
