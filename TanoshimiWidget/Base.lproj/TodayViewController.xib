@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KU6-MB-4x2">
-                    <rect key="frame" x="-2" y="31" width="279" height="28"/>
+                    <rect key="frame" x="73" y="31" width="249" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="4Yb-ZR-gMg"/>
                     </constraints>
@@ -34,8 +34,25 @@
                         <binding destination="-2" name="value" keyPath="self.daysLeftText" id="i7q-4O-7tK"/>
                     </connections>
                 </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZv-bp-7Sm">
+                    <rect key="frame" x="18" y="4" width="51" height="51"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="😍" id="68l-tm-WrB">
+                        <font key="font" metaFont="system" size="42"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="editable" keyPath="self.isEditing" id="fMe-pU-SKV"/>
+                        <binding destination="H7E-PZ-eT7" name="value" keyPath="values.emoji" id="Swg-aI-ZrG">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiE-9A-R3l">
-                    <rect key="frame" x="-2" y="3" width="118" height="17"/>
+                    <rect key="frame" x="75" y="7" width="118" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="until July 7th, 2017" id="KcC-hl-kTi">
                         <font key="font" metaFont="system"/>
@@ -48,7 +65,7 @@
                     </connections>
                 </textField>
                 <datePicker hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOR-L1-e6Z">
-                    <rect key="frame" x="0.0" y="0.0" width="96" height="27"/>
+                    <rect key="frame" x="77" y="4" width="96" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="5W9-Gi-2uc">
                         <font key="font" metaFont="system"/>
@@ -74,7 +91,7 @@
                     </connections>
                 </datePicker>
                 <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVe-nq-KRU">
-                    <rect key="frame" x="99" y="3" width="143" height="17"/>
+                    <rect key="frame" x="176" y="7" width="143" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="change the date!" id="q79-No-fX1">
                         <font key="font" metaFont="system"/>
@@ -89,31 +106,14 @@
                         </binding>
                     </connections>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZv-bp-7Sm">
-                    <rect key="frame" x="271" y="4" width="51" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="😍" id="68l-tm-WrB">
-                        <font key="font" metaFont="system" size="42"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                    <connections>
-                        <binding destination="-2" name="editable" keyPath="self.isEditing" id="fMe-pU-SKV"/>
-                        <binding destination="H7E-PZ-eT7" name="value" keyPath="values.emoji" id="Swg-aI-ZrG">
-                            <dictionary key="options">
-                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                            </dictionary>
-                        </binding>
-                    </connections>
-                </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="KU6-MB-4x2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="AfO-ab-vWV"/>
-                <constraint firstAttribute="trailing" secondItem="KU6-MB-4x2" secondAttribute="trailing" constant="45" id="Fst-pa-L2p"/>
+                <constraint firstItem="KU6-MB-4x2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="75" id="AfO-ab-vWV"/>
+                <constraint firstAttribute="trailing" secondItem="KU6-MB-4x2" secondAttribute="trailing" id="Fst-pa-L2p"/>
                 <constraint firstItem="KU6-MB-4x2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="aFo-8G-i2m"/>
                 <constraint firstAttribute="bottom" secondItem="KU6-MB-4x2" secondAttribute="bottom" constant="31" id="pP1-Fv-KED"/>
             </constraints>
-            <point key="canvasLocation" x="-1754" y="-427"/>
+            <point key="canvasLocation" x="-1754" y="-427.5"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="H7E-PZ-eT7"/>
         <customObject id="Byb-Bp-RhO" customClass="AppDelegate" customModule="TanoshimiWidget" customModuleProvider="target"/>

@@ -71,6 +71,7 @@
 		410B3D081ED9EDD4001F1A11 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		418530D61EE4175400042F1D /* MessageFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageFormatter.swift; sourceTree = "<group>"; };
 		418530DB1EE41F2F00042F1D /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		418530DE1EE4269F00042F1D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +140,9 @@
 				418530DB1EE41F2F00042F1D /* Defaults.swift */,
 				410B3CEA1ED9925D001F1A11 /* TodayViewController.xib */,
 				410B3CED1ED9925D001F1A11 /* Info.plist */,
+				410B3CF81ED994A9001F1A11 /* Defaults.plist */,
 				410B3CEE1ED9925D001F1A11 /* InfoPlist.strings */,
 				410B3D051ED9EC48001F1A11 /* Localizable.strings */,
-				410B3CF81ED994A9001F1A11 /* Defaults.plist */,
 				410B3CE61ED9925D001F1A11 /* Supporting Files */,
 			);
 			path = TanoshimiWidget;
@@ -223,6 +224,7 @@
 				Base,
 				de,
 				"pt-BR",
+				ja,
 			);
 			mainGroup = 410B3CC21ED9923B001F1A11;
 			productRefGroup = 410B3CCC1ED9923B001F1A11 /* Products */;
@@ -324,6 +326,7 @@
 				410B3D061ED9ED38001F1A11 /* de */,
 				410B3D071ED9ED3A001F1A11 /* en */,
 				410B3D081ED9EDD4001F1A11 /* pt-BR */,
+				418530DE1EE4269F00042F1D /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

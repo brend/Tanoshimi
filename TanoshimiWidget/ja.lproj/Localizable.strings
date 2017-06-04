@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Tanoshimi
+
+  Created by Philipp Brendel on 27.05.17.
+  Copyright © 2017 Entenwolf Software. All rights reserved.
+*/
+
+"TanoshimiDaysLeft" = "あと%d日";
+"TanoshimiDate" = "%@まで";
+"TanoshimiArrived" = "きた！";
