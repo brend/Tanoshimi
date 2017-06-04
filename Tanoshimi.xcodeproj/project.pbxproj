@@ -18,7 +18,7 @@
 		410B3CF31ED9925D001F1A11 /* TanoshimiWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 410B3CE11ED9925D001F1A11 /* TanoshimiWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		410B3CF91ED994A9001F1A11 /* Resources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CF81ED994A9001F1A11 /* Resources.plist */; };
 		410B3D031ED9EC48001F1A11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 410B3D051ED9EC48001F1A11 /* Localizable.strings */; };
-		41FD187A1EE2E01A00626D28 /* Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD18791EE2E01A00626D28 /* Presets.swift */; };
+		41FD187C1EE3200D00626D28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD187B1EE3200D00626D28 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		410B3D061ED9ED38001F1A11 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		410B3D071ED9ED3A001F1A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		410B3D081ED9EDD4001F1A11 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		41FD18791EE2E01A00626D28 /* Presets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presets.swift; sourceTree = "<group>"; };
+		41FD187B1EE3200D00626D28 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 		410B3CE51ED9925D001F1A11 /* TanoshimiWidget */ = {
 			isa = PBXGroup;
 			children = (
-				41FD18791EE2E01A00626D28 /* Presets.swift */,
+				41FD187B1EE3200D00626D28 /* AppDelegate.swift */,
 				410B3CE81ED9925D001F1A11 /* TodayViewController.swift */,
 				410B3CEA1ED9925D001F1A11 /* TodayViewController.xib */,
 				410B3CED1ED9925D001F1A11 /* Info.plist */,
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41FD187A1EE2E01A00626D28 /* Presets.swift in Sources */,
+				41FD187C1EE3200D00626D28 /* AppDelegate.swift in Sources */,
 				410B3CE91ED9925D001F1A11 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

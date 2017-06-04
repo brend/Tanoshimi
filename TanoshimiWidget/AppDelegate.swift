@@ -1,19 +1,20 @@
 //
-//  Presets.swift
+//  AppDelegate.swift
 //  Tanoshimi
 //
 //  Created by Philipp Brendel on 03.06.17.
 //  Copyright © 2017 Entenwolf Software. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
-class Presets {
-    var date: Date
-    var emoji: String
+class AppDelegate: NSObject, NSApplicationDelegate {
     
-    init() {
-        // register defaults
+    override func awakeFromNib() {
+        self.registerDefaults()
+    }
+    
+    func registerDefaults() {
         let defaults = UserDefaults.standard
         let defaultPrefsFile = Bundle.main.url(forResource: "Resources", withExtension: "plist")
         if let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile!) {
@@ -21,21 +22,6 @@ class Presets {
             
             defaults.register(defaults: prefsdict)
         }
-        
-        // apply defaults
-        self.date = defaults.object(forKey: "date") as! Date
-        self.emoji = defaults.string(forKey: "emoji")!
-    }
-    
-    func registerDefaults() {
-        
-    }
-    
-    func save() {
-        let defaults = UserDefaults.standard
-
-        defaults.setValue(date, forKey: "date")
-        defaults.setValue(emoji, forKey: "emoji")
     }
 }
 

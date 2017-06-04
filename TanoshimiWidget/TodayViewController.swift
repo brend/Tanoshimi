@@ -11,23 +11,37 @@ import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
     
-    @IBOutlet weak var tanoshimiDateField: NSTextField!
-    @IBOutlet weak var daysLeftField: NSTextField!
-    @IBOutlet weak var emojiField: NSTextField!
-    
-    let presets = Presets()
+    //@IBOutlet weak var tanoshimiDateField: NSTextField!
+    //@IBOutlet weak var daysLeftField: NSTextField!
+    //@IBOutlet weak var emojiField: NSTextField!
     
     let widgetAllowsEditing = true
     
     dynamic var tanoshimiDate: Date?
-    
-    dynamic var tanoshimiEmoji: String?
+    dynamic var tanoshimiDateText: String?
+    dynamic var daysLeftText: String?
 
     override var nibName: String? {
         return "TodayViewController"
     }
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        self.registerDefaults()
+    }
+    
+    override init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.registerDefaults()
+    }
+    
     override func awakeFromNib() {
+        self.registerDefaults()
+        
+        self.bind("tanoshimiDate", to: UserDefaults.standard, withKeyPath: "date", options: nil)
+        
         // observe date change to update ui
         self.addObserver(self, forKeyPath: "tanoshimiDate", options: .new, context: &myContext)
     }
@@ -49,17 +63,8 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     }
     
     func updateUserInterface() {
-        if self.tanoshimiDate == nil {
-            self.tanoshimiDate = presets.date
-        }
-        
-        if self.tanoshimiEmoji == nil {
-            self.tanoshimiEmoji = presets.emoji
-        }
-        
-        self.tanoshimiDateField.stringValue = self.getTanoshimiDateText()
-        self.daysLeftField.stringValue = self.getDaysLeftText()
-        self.emojiField.stringValue = self.tanoshimiEmoji!
+        self.tanoshimiDateText = self.getTanoshimiDateText()
+        self.daysLeftText = self.getDaysLeftText()
     }
     
     func getTanoshimiDateText() -> String {
@@ -115,15 +120,24 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     
     func widgetDidEndEditing() {
         self.isEditing = false
-        
-        self.presets.date = self.tanoshimiDate!
-        self.presets.emoji = self.tanoshimiEmoji!
-        self.presets.save()
     }
     
     override func viewDidDisappear() {
         // remove observer before deallocation
         self.removeObserver(self, forKeyPath: "tanoshimiDate")
+        
+        // remove bindings
+        self.unbind("tanoshimiDate")
+    }
+    
+    func registerDefaults() {
+        let defaults = UserDefaults.standard
+        let defaultPrefsFile = Bundle.main.url(forResource: "Resources", withExtension: "plist")
+        if let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile!) {
+            let prefsdict = defaultPrefs as! [String : Any]
+            
+            defaults.register(defaults: prefsdict)
+        }
     }
 }
 

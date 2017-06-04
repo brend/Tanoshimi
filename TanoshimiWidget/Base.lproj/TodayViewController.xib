@@ -8,14 +8,15 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModule="TanoshimiWidget" customModuleProvider="target">
             <connections>
-                <outlet property="daysLeftField" destination="KU6-MB-4x2" id="Na4-uS-Nfc"/>
-                <outlet property="emojiField" destination="lZv-bp-7Sm" id="j0g-nN-Bs5"/>
-                <outlet property="tanoshimiDateField" destination="ZiE-9A-R3l" id="Pnh-hW-Pzl"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject">
+            <connections>
+                <outlet property="delegate" destination="Byb-Bp-RhO" id="Afk-L8-cAR"/>
+            </connections>
+        </customObject>
         <customView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
             <subviews>
@@ -29,6 +30,9 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.daysLeftText" id="i7q-4O-7tK"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiE-9A-R3l">
                     <rect key="frame" x="-2" y="3" width="118" height="17"/>
@@ -40,6 +44,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="hidden" keyPath="self.isEditing" id="ojN-KL-pmw"/>
+                        <binding destination="-2" name="value" keyPath="self.tanoshimiDateText" id="0SS-rV-FXn"/>
                     </connections>
                 </textField>
                 <datePicker hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOR-L1-e6Z">
@@ -65,7 +70,7 @@
                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                             </dictionary>
                         </binding>
-                        <binding destination="-2" name="value" keyPath="self.tanoshimiDate" id="GLd-eO-aDI"/>
+                        <binding destination="H7E-PZ-eT7" name="value" keyPath="values.date" id="fTR-vQ-1b7"/>
                     </connections>
                 </datePicker>
                 <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVe-nq-KRU">
@@ -94,7 +99,7 @@
                     </textFieldCell>
                     <connections>
                         <binding destination="-2" name="editable" keyPath="self.isEditing" id="fMe-pU-SKV"/>
-                        <binding destination="-2" name="value" keyPath="self.tanoshimiEmoji" id="cJA-4q-OdE">
+                        <binding destination="H7E-PZ-eT7" name="value" keyPath="values.emoji" id="Swg-aI-ZrG">
                             <dictionary key="options">
                                 <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                             </dictionary>
@@ -108,8 +113,9 @@
                 <constraint firstItem="KU6-MB-4x2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="aFo-8G-i2m"/>
                 <constraint firstAttribute="bottom" secondItem="KU6-MB-4x2" secondAttribute="bottom" constant="31" id="pP1-Fv-KED"/>
             </constraints>
-            <point key="canvasLocation" x="-772" y="-162.5"/>
+            <point key="canvasLocation" x="-1754" y="-427"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="H7E-PZ-eT7"/>
+        <customObject id="Byb-Bp-RhO" customClass="AppDelegate" customModule="TanoshimiWidget" customModuleProvider="target"/>
     </objects>
 </document>
