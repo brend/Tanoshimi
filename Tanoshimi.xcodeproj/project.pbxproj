@@ -16,9 +16,9 @@
 		410B3CEC1ED9925D001F1A11 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CEA1ED9925D001F1A11 /* TodayViewController.xib */; };
 		410B3CF01ED9925D001F1A11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CEE1ED9925D001F1A11 /* InfoPlist.strings */; };
 		410B3CF31ED9925D001F1A11 /* TanoshimiWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 410B3CE11ED9925D001F1A11 /* TanoshimiWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		410B3CF91ED994A9001F1A11 /* Resources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CF81ED994A9001F1A11 /* Resources.plist */; };
+		410B3CF91ED994A9001F1A11 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 410B3CF81ED994A9001F1A11 /* Defaults.plist */; };
 		410B3D031ED9EC48001F1A11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 410B3D051ED9EC48001F1A11 /* Localizable.strings */; };
-		41FD187C1EE3200D00626D28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD187B1EE3200D00626D28 /* AppDelegate.swift */; };
+		418530D71EE4175400042F1D /* MessageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418530D61EE4175400042F1D /* MessageFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +59,12 @@
 		410B3CEB1ED9925D001F1A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
 		410B3CED1ED9925D001F1A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		410B3CEF1ED9925D001F1A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		410B3CF81ED994A9001F1A11 /* Resources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resources.plist; sourceTree = "<group>"; };
+		410B3CF81ED994A9001F1A11 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		410B3D041ED9EC48001F1A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		410B3D061ED9ED38001F1A11 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		410B3D071ED9ED3A001F1A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		410B3D081ED9EDD4001F1A11 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		41FD187B1EE3200D00626D28 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		418530D61EE4175400042F1D /* MessageFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,13 +128,13 @@
 		410B3CE51ED9925D001F1A11 /* TanoshimiWidget */ = {
 			isa = PBXGroup;
 			children = (
-				41FD187B1EE3200D00626D28 /* AppDelegate.swift */,
 				410B3CE81ED9925D001F1A11 /* TodayViewController.swift */,
+				418530D61EE4175400042F1D /* MessageFormatter.swift */,
 				410B3CEA1ED9925D001F1A11 /* TodayViewController.xib */,
 				410B3CED1ED9925D001F1A11 /* Info.plist */,
 				410B3CEE1ED9925D001F1A11 /* InfoPlist.strings */,
 				410B3D051ED9EC48001F1A11 /* Localizable.strings */,
-				410B3CF81ED994A9001F1A11 /* Resources.plist */,
+				410B3CF81ED994A9001F1A11 /* Defaults.plist */,
 				410B3CE61ED9925D001F1A11 /* Supporting Files */,
 			);
 			path = TanoshimiWidget;
@@ -242,7 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				410B3CF91ED994A9001F1A11 /* Resources.plist in Resources */,
+				410B3CF91ED994A9001F1A11 /* Defaults.plist in Resources */,
 				410B3D031ED9EC48001F1A11 /* Localizable.strings in Resources */,
 				410B3CEC1ED9925D001F1A11 /* TodayViewController.xib in Resources */,
 				410B3CF01ED9925D001F1A11 /* InfoPlist.strings in Resources */,
@@ -265,8 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41FD187C1EE3200D00626D28 /* AppDelegate.swift in Sources */,
 				410B3CE91ED9925D001F1A11 /* TodayViewController.swift in Sources */,
+				418530D71EE4175400042F1D /* MessageFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

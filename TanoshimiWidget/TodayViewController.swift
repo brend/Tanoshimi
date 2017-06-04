@@ -11,30 +11,17 @@ import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
     
-    //@IBOutlet weak var tanoshimiDateField: NSTextField!
-    //@IBOutlet weak var daysLeftField: NSTextField!
-    //@IBOutlet weak var emojiField: NSTextField!
-    
     let widgetAllowsEditing = true
     
     dynamic var tanoshimiDate: Date?
+    
     dynamic var tanoshimiDateText: String?
     dynamic var daysLeftText: String?
+    
+    let messages = MessageFormatter()
 
     override var nibName: String? {
         return "TodayViewController"
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        self.registerDefaults()
-    }
-    
-    override init?(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        self.registerDefaults()
     }
     
     override func awakeFromNib() {
@@ -63,53 +50,8 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     }
     
     func updateUserInterface() {
-        self.tanoshimiDateText = self.getTanoshimiDateText()
-        self.daysLeftText = self.getDaysLeftText()
-    }
-    
-    func getTanoshimiDateText() -> String {
-        if let tanoshimiDate = self.tanoshimiDate {
-            let timeLeft = tanoshimiDate.timeIntervalSince(Date())
-            let daysLeft = Int(ceil(timeLeft / (24 * 3600)))
-            
-            if daysLeft <= 0 {
-                return ""
-            } else {
-                let formattedDate = formatDate(date: tanoshimiDate)
-                
-                let untilFormat = NSLocalizedString("TanoshimiDate", comment: "Popo")
-                
-                return String(format: untilFormat, formattedDate)
-            }
-        } else {
-            return "n/a"
-        }
-    }
-    
-    func getDaysLeftText() -> String {
-        if let tanoshimiDate = self.tanoshimiDate {
-            let timeLeft = tanoshimiDate.timeIntervalSince(Date())
-            let daysLeft = Int(ceil(timeLeft / (24 * 3600)))
-            
-            if daysLeft <= 0 {
-                return NSLocalizedString("TanoshimiArrived", comment: "Oshiri")
-            } else {
-                let daysLeftFormat = NSLocalizedString("TanoshimiDaysLeft", comment: "Butt")
-                
-                return String(format: daysLeftFormat, daysLeft)
-            }
-        } else {
-            return "n/a"
-        }
-    }
-    
-    func formatDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        
-        return formatter.string(from: date)
+        self.tanoshimiDateText = messages.getTanoshimiDateText(tanoshimiDate: self.tanoshimiDate)
+        self.daysLeftText = messages.getDaysLeftText(tanoshimiDate: self.tanoshimiDate)
     }
     
     dynamic var isEditing = false
@@ -132,7 +74,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     
     func registerDefaults() {
         let defaults = UserDefaults.standard
-        let defaultPrefsFile = Bundle.main.url(forResource: "Resources", withExtension: "plist")
+        let defaultPrefsFile = Bundle.main.url(forResource: "Defaults", withExtension: "plist")
         if let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile!) {
             let prefsdict = defaultPrefs as! [String : Any]
             
