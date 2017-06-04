@@ -25,7 +25,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     }
     
     override func awakeFromNib() {
-        self.registerDefaults()
+        registerDefaults()
         
         self.bind("tanoshimiDate", to: UserDefaults.standard, withKeyPath: "date", options: nil)
         
@@ -70,16 +70,6 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         
         // remove bindings
         self.unbind("tanoshimiDate")
-    }
-    
-    func registerDefaults() {
-        let defaults = UserDefaults.standard
-        let defaultPrefsFile = Bundle.main.url(forResource: "Defaults", withExtension: "plist")
-        if let defaultPrefs = NSDictionary(contentsOf: defaultPrefsFile!) {
-            let prefsdict = defaultPrefs as! [String : Any]
-            
-            defaults.register(defaults: prefsdict)
-        }
     }
 }
 

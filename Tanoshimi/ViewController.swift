@@ -9,11 +9,22 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    dynamic var daysLeftText: String?
+    dynamic var tanoshimiDateText: String?
+    
+    dynamic var tanoshimiDate: Date?
+    
+    let messages = MessageFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        registerDefaults()
+        
+        bind("tanoshimiDate", to: UserDefaults.standard, withKeyPath: "date", options: nil)
+        
+        updateUI()
     }
 
     override var representedObject: Any? {
@@ -21,5 +32,48 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    func updateUI() {
+        daysLeftText = messages.getDaysLeftText(tanoshimiDate: tanoshimiDate)
+        tanoshimiDateText = messages.getTanoshimiDateText(tanoshimiDate: tanoshimiDate)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
